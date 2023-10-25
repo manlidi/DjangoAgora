@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}Restaurant{% endblock %}</title>
+    {% load static %}
+	<meta name="description" content="#">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Bootstrap core CSS -->
+	<link href="{% static 'dist/css/lib/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+		<!-- Swipe core CSS -->
+	<link href="{% static 'dist/css/swipe.min.css' %}" type="text/css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    {% block content %}
+                        
+    {% endblock %}
+
+		<!-- Bootstrap/Swipe core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="{% static 'dist/js/vendor/popper.min.js' %}"></script>
+		<script src="{% static 'dist/js/swipe.min.js' %}"></script>
+		<script src="{% static 'dist/js/bootstrap.min.js' %}"></script>
+
+		
+		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+	</body>
+
+</html>

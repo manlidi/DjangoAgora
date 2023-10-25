@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'assets/main.css' %}">
+    </head>
+<body>
+    <button><a style="text-decoration: none; color:aliceblue;" href="{% url 'chat' %}">Chat</a></button>
+    <button><a style="text-decoration: none; color:aliceblue;" href="{% url 'vocal' %}">Voice Call</a></button>
+    <button id="join-btn">Rejoindre</button>
+
+    <div id="stream-wrapper">
+        <div id="video-streams"></div>
+
+        <div id="stream-controls">
+            <p>Connecté en tant que : {{ username }}</p>
+            <button id="leave-btn">Quitter</button>
+            <button id="mic-btn">Micro</button>
+            <button id="camera-btn">Camera</button>
+        </div>
+    </div>
+
+    <script src="{% static 'assets/AgoraRTC_N-4.19.2.js' %}"></script>
+    <script src="{% static 'assets/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Inscription{% endblock %}
+{% load static %}
+{% block content %}
+<main>
+    <div class="layout">
+        <div class="main">
+            <div class="start">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="content"> 
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert {% if message.tags %} alert-{{ message.tags }} {% endif %}"> 
+                                        {{message}}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            <h1>Inscription</h1>
+                            <form class="signup"method="POST" enctype="multipart/form-data">
+                              {% csrf_token %}
+                                <div class="mb-3">
+                                    <input type="text" name="username" class="form-control" placeholder="Votre Nom" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email"  name="email"class="form-control" placeholder="Votre Email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input class="form-control"  name="photo" type="file" id="formFile" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" name="adresse" class="form-control" placeholder="Votre Adresse" required>
+                                </div>                
+                                <div class="mb-3">
+                                    <input type="password" name="pass" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="password" name="c_pass"  id="inputPassword" class="form-control" placeholder="Confirmer mot de passe" required>
+                                </div>
+                                <button type="submit" class="btn button">Inscription</button>
+                            </form>
+                            <div>
+                                <span>Vous avez déjà un compte ? <a href="{% url 'connexion'%}">Connectez-vous</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</main>
+
+<script src="{% static 'dist/js/jquery-3.3.1.slim.min.js' %}"
+{% endblock %}
+  
+   
